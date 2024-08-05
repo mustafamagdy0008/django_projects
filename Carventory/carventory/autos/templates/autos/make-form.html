@@ -1,0 +1,15 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+<h2>Add a Make</h2>
+<form class=""  method="post"> {% csrf_token %}
+  <div class="form">
+    {{ form }}
+  </div>
+  <div class="inputs">
+    <input type="submit" value="Submit">
+    <input type="submit" value="Cancel" onclick="window.location='{% url 'autos' %}' ; return false;">
+  </div>
+</form>
+<a href="{% url 'autos' %}">Back to autos</a>
+{% endblock %}

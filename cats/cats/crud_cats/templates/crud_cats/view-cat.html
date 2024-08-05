@@ -1,0 +1,10 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+
+	<h3>{{ obj.nickname }}</h3> 
+	<h3>Weight: {{ obj.weight }}</h3>
+	<h3>Food: {{ obj.food }}</h3>
+	<h3>Breed: {{ obj.breed }}</h3>
+	<p>go back <a href="{% url 'crud_cats:cats_list' %}">home</a></p>
+{% endblock content %}

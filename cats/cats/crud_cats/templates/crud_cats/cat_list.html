@@ -1,0 +1,14 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+	{% if cat_list %}
+		<ul>
+			{% for cat in cat_list %}
+				<li><a href="{% url 'crud_cats:view_cat' cat.id %}">{{ cat }}</a></li>
+			{% endfor %}
+		</ul>
+		<p>go back <a href="{% url 'crud_cats:cats_list' %}">home</a></p>
+	{% else %}
+		<h1>There are no data</h1>
+	{% endif %}
+{% endblock content %}

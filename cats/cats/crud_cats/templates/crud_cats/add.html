@@ -1,0 +1,11 @@
+{% extends "home/main.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+	<form method="POST" action="">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<input type="submit" name="submit" value="Submit" required >
+	</form>
+    <p>go back <a href="{% url 'crud_cats:cats_list' %}">home</a></p
+{% endblock content %}

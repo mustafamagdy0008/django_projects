@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}A conditional template{% endblock %}
+
+{% block content %}
+	<p>Your guess was {{ guess }}</p>
+	{% if guess < 42 %}
+		<p>Too Low</p>
+	{% elif guess > 42 %}
+		<p>Too High</p>
+	{% else %}
+		<p>Just Right</p>
+	{% endif %}
+{% endblock content %}

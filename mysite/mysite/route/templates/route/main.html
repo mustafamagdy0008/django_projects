@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p><a href="/route/second/">hard coded</a></p>
+<p><a href="{% url 'route:second-view' %}">DRY coded</a></p>
+{% endblock %}

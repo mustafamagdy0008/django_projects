@@ -1,0 +1,11 @@
+{% extends "articles/home.html" %}
+
+{% block content %}
+	<h3>Are you sure you want to delete {{ object }}</h3>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" name="yes" value="Yes">
+		<button type="button" onclick="window.location='{% url 'articles:posts'  %} '; return false;">No</button>
+
+	</form>
+{% endblock %}

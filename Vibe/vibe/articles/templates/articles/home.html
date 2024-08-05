@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vibe</title>
+	<style>
+		fieldset {
+		  background-color: #eeeeee;
+		  width: 60%;
+		  height: 100px;
+		}
+
+		legend {
+		  background-color: gray;
+		  color: white;
+		  padding: 5px 10px;
+		}
+
+		input {
+		  margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	{% if messages %}
+		{% for message in messages %}
+			<h4>{{ message }}</h4>
+		{% endfor %}
+	{% endif %}
+	{% block content %}
+		<h1>Welcome To Vibe</h1>
+		<ul>
+			<li>View <a href="{% url 'articles:posts' %}">articles</a></li>
+		</ul>
+
+		{% if user.is_authenticated %}
+			<p><a href="{% url 'users:profile' %}">Profile</a></p>
+			<p><a href="{% url 'users:logout' %}">Logout</a></p>
+		{% else %}
+			<p><a href="{% url 'users:register' %}">Register Here</a></p>
+			<p><a href="{% url 'users:login' %}">Login Here</a></p>
+		{% endif %}
+	{% endblock %}
+	
+
+</body>
+</html>

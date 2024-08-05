@@ -1,0 +1,17 @@
+{% extends "articles/home.html" %}
+
+{% block content %}
+	<h1>Articles</h1>
+	<p><a href="{% url 'articles:home' %}">Go Home</a></p>
+	<p><a href="{% url 'articles:add_article' %}">Create an Article</a></p>
+	<ul>
+		{% if qs %}
+			{% for q in qs %}
+				<p><a href="{% url 'articles:post' q.id %}">{{ q }}</a> 
+					{% if q.owner == user %}
+						( <a href="{% url 'articles:update_article' q.id %}">Update</a> | <a href="{% url 'articles:delete_article' q.id %}">Delete</a> )</p>
+					{% endif %}
+			{% endfor %}
+		{% endif %}
+	</ul>
+{% endblock %}

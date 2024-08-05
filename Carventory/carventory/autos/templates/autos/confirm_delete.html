@@ -1,0 +1,15 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+<h1>Delete Auto</h1>
+<div class="inputs" style="display: block; margin-bottom: 30px">
+  <p>Are you sure you want to delete the auto: {{ auto }}</p>
+  <form  method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete">
+  </form>
+</div>
+
+<a href="{% url 'view-makes' %}">Back to makes</a>
+
+{% endblock %}

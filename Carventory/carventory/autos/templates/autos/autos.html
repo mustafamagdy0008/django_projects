@@ -1,0 +1,10 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+<h2>Autos List</h2>
+<ul>
+  <li>View <a href="{% url 'view-makes' %}">makes</a></li>
+  <li>Add a <a href="{% url 'make' %}">make</a></li>
+  <li>Add an <a href="{% url 'auto' %}">auto</a></li>
+</ul>
+{% endblock %}

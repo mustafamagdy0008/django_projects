@@ -1,0 +1,9 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+	<ul>
+		<li><a href="{% url 'crud_cats:add_breed' %}">Add a breed</a></li>
+		<li><a href="{% url 'crud_cats:add_cat' %}">Add a cat</a></li>
+		<li><a href="{% url 'crud_cats:view_cats' %}">View cats</a></li>
+	</ul>
+{% endblock content %}

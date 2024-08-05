@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+<h1>Hello, Man</h1>
+<form class="_9vtf" data-testid="royal_login_form" action="https://www.facebook.com/?stype=lo&deoia=1&jlou=AfdZiFz1JKu630MhtQ0TNZ0XBo7iFXx-bhoFggFUhKZA_fq_-MrCZgUkGpDYNkVFLSl7THnZL5nh8l6f8zK78UI7e4irzHMv44pSkCbn2zv5yg&smuh=39938&lh=Ac_GlgJP0HwfLJjskUc">{% csrf_token %}
+  <input type="text" class="inputtext _55r1 _6luy" name="email" id="email" data-testid="royal_email" placeholder="Email address or phone number" autofocus="1" aria-label="Email address or phone number">
+  <input type="password" class="inputtext _55r1 _6luy _9npi" name="pass" id="pass" data-testid="royal_pass" placeholder="Password" aria-label="Password">
+  <input type="submit" >
+</form>
+{% endblock content %}

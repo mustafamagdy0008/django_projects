@@ -1,0 +1,11 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+	<h3>Are you sure you want to delete {{ cat }}</h3>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" name="yes" value="Yes">
+		<button type="button" onclick="window.location='{% url 'crud_cats:view_cats'  %} '; return false;">No</button>
+
+	</form>
+{% endblock content %}

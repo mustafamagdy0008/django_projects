@@ -1,0 +1,27 @@
+{% extends "home/main.html" %}
+
+{% block content %}
+<div class="make" style="margin-bottom: 15px">
+  <h2 style="display: inline;">{{ make }}</h2>
+  <div class="inputs">
+    <a href="{% url 'update-make' make.id %}"><input type="submit" name="" value="Update"style=" display: inline-block; margin-left: 5px"></a>
+    <a href="{% url 'delete-make' make.id %}"><input type="submit" name="" value="Delete"></a>
+  </div>
+</div>
+<div class="">
+  <ul>
+    {% for auto in autos %}
+      <li><strong>Nickname:</strong> {{ auto.nickname }}<br></li>
+      <li><strong>Mileage:</strong> {{ auto.mileage }}<br></li>
+      <li><strong>Comments:</strong> {{ auto.comments }}<br></li>
+      <!-- <li><strong>Make:</strong> {{ autos.make.name }}</li> -->
+    {% empty %}
+      <p>No autos available for this make.</p>
+    {% endfor %}
+
+  </ul>
+</div>
+
+<a href="{% url 'view-makes' %}">Back to makes</a>
+
+{% endblock %}

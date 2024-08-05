@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Data Center{% endblock title %}
+
+{% block content %}
+<h1>Cats</h1>
+{% if cat_list is not None %}
+  <ul>
+    {% for obj in cat_list %}
+      <li><a href="{% url 'gview:cat' obj.id %}">{{ obj.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>There is no cats in the database</p>
+{% endif %}
+{% endblock content %}

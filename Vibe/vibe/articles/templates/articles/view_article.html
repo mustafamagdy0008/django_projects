@@ -1,0 +1,13 @@
+{% extends "articles/home.html" %}
+
+{% block content %}
+	<h3>Creator: {{ article.get_owner }}</h3>
+	<h3>Title: {{ article.get_title }}</h3>
+	<h3>Content: </h3>
+	<fieldset>
+		<legend>Content</legend>
+		{{ article.get_title }}
+	</fieldset>
+	<br>
+	<p>Back to <a href="{% url 'articles:posts' %}">articles</a></p>
+{% endblock %}

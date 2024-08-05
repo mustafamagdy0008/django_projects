@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Data Center{% endblock title %}
+
+{% block content %}
+<ul>
+  <li><a href="{% url 'gview:cats' %}">A list of cats</a></li>
+  <li><a href="{% url 'gview:dogs' %}">A list of cats</a></li>
+</ul>
+{% endblock content %}
